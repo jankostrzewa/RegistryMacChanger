@@ -16,6 +16,6 @@
         <TextBox x:Name="txtNewMAC" HorizontalAlignment="Left" Height="23" Margin="309,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblCurrentMAC" Content="Current MAC:" HorizontalAlignment="Left" Margin="194,114,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblNewMAC" Content="New MAC:" HorizontalAlignment="Left" Margin="194,142,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnSubkeys" Content="Find wlankey" HorizontalAlignment="Left" Margin="151,230,0,0" VerticalAlignment="Top" Width="75" Click="btnSubkeys_Click"/>
+        <Button x:Name="btnSubkeys" Content="Find wlankey" HorizontalAlignment="Left" Margin="151,230,0,0" VerticalAlignment="Top" Width="75" Click="BtnSubkeys_Click"/>
     </Grid>
 </Window>

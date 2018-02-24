@@ -9,12 +9,12 @@ namespace MacRegistryChanger
     /// </summary>
     public partial class MainWindow : Window
     {
-        private RegistryManipulation registryManipulation;
+        private readonly RegistryManipulation _registryManipulation;
 
         public MainWindow()
         {
             InitializeComponent();
-            registryManipulation = new RegistryManipulation();
+            _registryManipulation = new RegistryManipulation();
         }
 
         private void btnGetAddress(object sender, RoutedEventArgs e)
@@ -23,7 +23,7 @@ namespace MacRegistryChanger
 
         private void btnIsCustomEnabled_Click(object sender, RoutedEventArgs e)
         {
-            if (registryManipulation.IsCustomMacKeyEnabled())
+            if (_registryManipulation.IsCustomMacKeyEnabled())
             {
                 lblCustomMacEnabled.Content = "Enabled!";
                 btnCreateCustomMac.IsEnabled = false;
@@ -48,7 +48,7 @@ namespace MacRegistryChanger
                 return;
             }
             newMac = newMac.Substring(0, 12);
-            registryManipulation.CreateCustomMacKey(newMac);
+            _registryManipulation.CreateCustomMacKey(newMac);
         }
 
         private void btnChangeCustomMac_Click(object sender, RoutedEventArgs e)
@@ -61,9 +61,9 @@ namespace MacRegistryChanger
 
         }
 
-        private void btnSubkeys_Click(object sender, RoutedEventArgs e)
+        private async void BtnSubkeys_Click(object sender, RoutedEventArgs e)
         {
-            RegistryKey y = registryManipulation.GetWlanRegistryKey();
+            RegistryKey y = await _registryManipulation.GetWlanRegistryKeyAsync();
             string a = y.Name;
         }
     }
